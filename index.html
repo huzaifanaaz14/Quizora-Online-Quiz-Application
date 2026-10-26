@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Quizora | Online Quiz Application</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+
+```
+<header class="navbar">
+    <a href="#" class="brand">
+        <span class="brand-icon">Q</span>
+        <span>quizora<span class="brand-dot">.</span></span>
+    </a>
+
+    <div class="nav-label">ONLINE QUIZ PLATFORM</div>
+</header>
+
+<main class="main-container">
+
+    <!-- Welcome Screen -->
+    <section id="welcome-screen" class="welcome-screen">
+
+        <div class="welcome-content">
+
+            <div class="eyebrow">
+                <span class="live-dot"></span>
+                YOUR NEXT CHALLENGE STARTS HERE
+            </div>
+
+            <h1>
+                A little curiosity.<br>
+                <span>A lot of knowledge.</span>
+            </h1>
+
+            <p class="welcome-description">
+                Challenge your mind, test what you know,
+                and discover what you can achieve.
+            </p>
+
+            <div class="info-cards">
+
+                <div class="info-card">
+                    <span class="info-icon">✦</span>
+                    <div>
+                        <strong>10 Questions</strong>
+                        <small>Multiple choice</small>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <span class="info-icon">◷</span>
+                    <div>
+                        <strong>5 Minutes</strong>
+                        <small>Time challenge</small>
+                    </div>
+                </div>
+
+            </div>
+
+            <button id="start-btn" class="primary-btn">
+                Start your quiz
+                <span>→</span>
+            </button>
+
+            <p class="small-note">
+                Take a breath. Trust your knowledge. Begin.
+            </p>
+
+        </div>
+
+        <div class="welcome-illustration">
+
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+
+            <div class="floating-symbol symbol-one">✦</div>
+            <div class="floating-symbol symbol-two">✧</div>
+            <div class="floating-symbol symbol-three">+</div>
+
+            <div class="hero-card">
+
+                <div class="hero-card-top">
+                    <span>YOUR POTENTIAL</span>
+                    <span class="hero-star">✦</span>
+                </div>
+
+                <div class="hero-number">∞</div>
+
+                <h3>Knowledge has<br>no limits.</h3>
+
+                <div class="hero-card-bottom">
+                    <span>LEARN</span>
+                    <span>GROW</span>
+                    <span>REPEAT ↗</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Quiz Screen -->
+    <section id="quiz-screen" class="quiz-screen hidden">
+
+        <div class="quiz-heading">
+
+            <div>
+                <div class="eyebrow">YOUR CHALLENGE</div>
+                <h2>Let's test your knowledge.</h2>
+                <p>Choose the answer you believe is correct.</p>
+            </div>
+
+            <div class="timer-box">
+                <span class="timer-icon">◷</span>
+                <div>
+                    <small>TIME LEFT</small>
+                    <strong id="timer">05:00</strong>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="progress-section">
+
+            <div class="progress-label">
+                <span id="question-counter">QUESTION 01 OF 10</span>
+                <span id="progress-percent">10% completed</span>
+            </div>
+
+            <div class="progress-track">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+        </div>
+
+        <div class="question-card">
+
+            <div class="question-category">
+                <span class="category-dot"></span>
+                GENERAL KNOWLEDGE
+            </div>
+
+            <h3 id="question-text">Your question will appear here.</h3>
+
+            <div id="options-container" class="options-container"></div>
+
+            <p id="selection-message" class="selection-message" aria-live="polite">
+                Select one answer to continue.
+            </p>
+
+            <div class="quiz-navigation">
+
+                <button id="prev-btn" class="secondary-btn">
+                    ← Previous
+                </button>
+
+                <button id="next-btn" class="primary-btn">
+                    Next question →
+                </button>
+
+            </div>
+
+        </div>
+
+        <p class="quiz-footer">
+            QUIZORA <span>•</span> EVERY ANSWER IS A STEP FORWARD
+        </p>
+
+    </section>
+
+
+    <!-- Results Screen -->
+    <section id="result-screen" class="result-screen hidden">
+
+        <div class="result-symbol">✦</div>
+
+        <p class="eyebrow">CHALLENGE COMPLETED</p>
+
+        <h2 id="result-heading">Well done!</h2>
+
+        <p id="result-message">
+            Every question was an opportunity to learn.
+        </p>
+
+        <div class="score-card">
+
+            <span class="score-label">YOUR FINAL SCORE</span>
+
+            <div class="score-number">
+                <span id="score">0</span>
+                <span class="score-divider">/</span>
+                <span id="total-score">10</span>
+            </div>
+
+            <div class="score-track">
+                <div id="score-bar" class="score-bar"></div>
+            </div>
+
+            <p id="score-percentage">0% accuracy</p>
+
+        </div>
+
+        <div class="result-stats">
+
+            <div class="result-stat">
+                <span class="stat-icon correct-icon">✓</span>
+                <div>
+                    <strong id="correct-count">0</strong>
+                    <small>Correct answers</small>
+                </div>
+            </div>
+
+            <div class="result-stat">
+                <span class="stat-icon wrong-icon">✕</span>
+                <div>
+                    <strong id="wrong-count">0</strong>
+                    <small>Incorrect / skipped</small>
+                </div>
+            </div>
+
+        </div>
+
+        <button id="restart-btn" class="primary-btn">
+            Try again
+            <span>↻</span>
+        </button>
+
+        <p class="small-note">
+            Keep learning. Your next achievement awaits.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+    <span>QUIZORA © 2026</span>
+    <span>MADE FOR CURIOUS MINDS ♡</span>
+</footer>
+
+<script src="script.js"></script>
+```
+</body>
+</html>
+
